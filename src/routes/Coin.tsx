@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams, Outlet } from "react-router";
 import styled from "styled-components";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -177,6 +177,7 @@ function Coin() {
               <Text>{coinInfoData?.open_source ? "Yes" : "No"}</Text>
             </Detail>
           </DetailBox>
+          <Outlet />
         </>
       )}
     </Container>
