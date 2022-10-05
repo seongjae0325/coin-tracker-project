@@ -78,14 +78,14 @@ function Coins() {
   const [coins, setCoins] = useState<CoinInterface[]>([]);
   const [loading, setIsLoading] = useState(true);
 
-  const geCoinData = async () => {
+  const getCoinsListData = async () => {
     const response = await axios.get("https://api.coinpaprika.com/v1/coins");
     setCoins(response.data.slice(0, 200));
     setIsLoading(false);
   };
 
   useEffect(() => {
-    geCoinData();
+    getCoinsListData();
   }, []);
 
   return (
